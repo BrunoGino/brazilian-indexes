@@ -1,6 +1,5 @@
 package br.com.brazilianindexes.controller;
 
-import br.com.brazilianindexes.model.RawBcbIndex;
 import br.com.brazilianindexes.model.Index;
 import br.com.brazilianindexes.service.IndexesService;
 import org.springframework.beans.factory.annotation.Autowired;
