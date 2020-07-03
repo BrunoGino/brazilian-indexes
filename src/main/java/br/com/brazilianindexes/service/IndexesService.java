@@ -9,6 +9,7 @@ import reactor.core.publisher.Flux;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
@@ -101,6 +102,7 @@ public class IndexesService {
     }
 
     private String getIBGEIndexAsDate(RawIBGEIndex rawIBGEIndex) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         LocalDate indexDate = LocalDate.parse(rawIBGEIndex.getP_cod() + "01", dateTimeFormatter);
         return String.valueOf(indexDate.atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli());
     }
